@@ -1,0 +1,23 @@
+.cta-section {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.section-bg-video {
+  display: none;
+}
+
+.cta-section h2,
+.cta-section p,
+.cta-button {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 0 2px 8px #000;
+}
+

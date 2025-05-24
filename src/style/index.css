@@ -1,0 +1,263 @@
+/* index.css: solo reset e base, import dei font se necessario */
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Quicksand:wght@400;700&family=Rock+Salt&family=Permanent+Marker&display=swap");
+
+:root {
+  --fire-red: #ff3c1a;
+  --fire-orange: #ff7e29;
+  --fire-yellow: #ffe066;
+  --fire-white: #fff;
+  --fire-dark: #1a1a1a;
+  --fire-mid: #b30000;
+  --fire-light: #ffb347;
+  color-scheme: dark;
+  color: var(--fire-white);
+  background-color: #111;
+  font-family: "Quicksand", "Permanent Marker", "Rock Salt", system-ui, Avenir,
+    Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #111;
+  color: var(--fire-white);
+}
+
+a {
+  color: var(--fire-orange);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+a:hover {
+  color: var(--fire-red);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  background: rgba(20, 0, 0, 0.95);
+  z-index: 100;
+  box-shadow: 0 2px 8px #b3000033;
+  padding: 0 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 64px;
+}
+
+.logo-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  background: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #b30000;
+  overflow: hidden;
+  transition: width 0.2s, height 0.2s;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.navbar ul {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  transition: right 0.3s;
+}
+
+.navbar a {
+  color: var(--fire-red);
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: var(--fire-white);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 4px 0;
+  background: var(--fire-red);
+  border-radius: 2px;
+  transition: 0.3s;
+  box-shadow: 0 0 4px #b30000;
+}
+
+.hamburger.open span,
+.hamburger:hover span {
+  background: #b30000;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0.5rem 1.2rem;
+    height: 54px;
+  }
+  .logo-navbar {
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-left: 0.3rem;
+    margin-right: 0.7rem;
+  }
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 70vw;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(20, 0, 0, 0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 4.5rem 1.2rem 1.2rem 1.2rem;
+    box-shadow: -2px 0 12px #b3000033;
+    z-index: 150;
+    transition: right 0.3s;
+    justify-content: flex-start;
+  }
+  .navbar ul.open {
+    right: 0;
+  }
+  .navbar ul:not(.open) {
+    right: -100vw;
+  }
+  .navbar a {
+    font-size: 1rem;
+  }
+  .hamburger {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    margin-left: 0.8rem;
+    margin-right: 2.2rem; /* aumenta distanza dal bordo destro */
+    padding: 0.35rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 0.5rem 1.1rem;
+  }
+  .logo-navbar {
+    width: 3.8rem;
+    height: 3.8rem;
+    margin-left: 0.4rem;
+    margin-right: 1rem;
+  }
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.3rem;
+    padding: 4.5rem 1.2rem 1.2rem 1.2rem;
+    width: 70vw;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(20, 0, 0, 0.98);
+    box-shadow: -2px 0 12px #b3000033;
+    z-index: 150;
+    transition: right 0.3s;
+  }
+  .navbar ul.open {
+    right: 0;
+  }
+  .navbar ul:not(.open) {
+    right: -100vw;
+  }
+  .navbar a {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.5rem;
+    width: 100%;
+    display: block;
+  }
+  .hamburger {
+    display: flex;
+    width: 54px;
+    height: 54px;
+    margin-left: 1rem;
+    margin-right: 2.2rem; /* aumenta distanza dal bordo destro */
+    padding: 0.45rem;
+  }
+}
+
+/* Nascondi eventuale scritta centrale nella navbar */
+.navbar-center,
+.navbar .center-text {
+  display: none !important;
+}
+
+h1,
+h2,
+h3,
+.navbar {
+  font-family: "Rock Salt", "Luckiest Guy", "Quicksand", "Permanent Marker",
+    cursive, sans-serif;
+}
+
+body,
+p,
+li,
+.section-text,
+.hero-content p {
+  font-family: "Permanent Marker", "Quicksand", "Rock Salt", "Luckiest Guy",
+    sans-serif;
+}
+

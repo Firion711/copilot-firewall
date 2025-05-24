@@ -1,0 +1,324 @@
+/* Stili per le sezioni principali della landing page */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--fire-dark);
+  color: var(--fire-white);
+  padding: 4rem 2.5rem; /* aumentato margine laterale */
+  scroll-snap-align: start;
+  border-bottom: 2px solid var(--fire-orange);
+}
+
+.section h2 {
+  color: var(--fire-orange);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px var(--fire-red);
+}
+
+.section p,
+.section a {
+  font-size: 1.2rem;
+  color: var(--fire-white);
+  max-width: 700px;
+  text-align: center;
+}
+
+.section a {
+  color: var(--fire-orange);
+  text-decoration: underline;
+}
+
+.cta-section {
+  background: linear-gradient(
+    135deg,
+    var(--fire-dark) 60%,
+    var(--fire-orange) 100%
+  );
+  position: relative;
+  /* Overlay scuro per aumentare contrasto */
+}
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+  pointer-events: none;
+}
+.cta-section > *:not(.section-bg-video) {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section h2,
+.cta-section p {
+  color: #fff;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--fire-white);
+  background: linear-gradient(
+    90deg,
+    var(--fire-orange) 0%,
+    var(--fire-red) 100%
+  );
+  border: 2px solid var(--fire-yellow);
+  border-radius: 40px;
+  box-shadow: 0 4px 24px #b3000033, 0 0 0 4px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+  cursor: pointer;
+  text-shadow: 0 2px 8px #000a, 0 0 2px #000a;
+}
+.cta-button:hover {
+  background: linear-gradient(
+    90deg,
+    var(--fire-yellow) 0%,
+    var(--fire-orange) 100%
+  );
+  color: var(--fire-dark);
+  border: 2px solid var(--fire-red);
+  transform: scale(1.05);
+  text-shadow: 0 2px 8px #fff8, 0 0 2px #fff8;
+}
+
+.social-section {
+  background: #181818;
+}
+.social-feed {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0 1rem 0;
+  flex-wrap: wrap;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  background: #b30000;
+  border-radius: 50px;
+  padding: 0.7rem 1.7rem;
+  text-decoration: none;
+  box-shadow: 0 2px 12px #b3000033;
+  transition: background 0.2s, transform 0.2s;
+}
+.social-icon.instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+.social-icon.facebook {
+  background: linear-gradient(135deg, #1877f3 0%, #1877f3 100%);
+}
+.social-icon.tiktok {
+  background: linear-gradient(45deg, #25f4ee, #fe2c55, #000);
+}
+.social-icon.email {
+  background: #181818;
+}
+.social-icon.email svg rect {
+  fill: #181818;
+}
+.social-icon svg {
+  margin-right: 0.7rem;
+  vertical-align: middle;
+}
+@media (max-width: 600px) {
+  .social-icon svg {
+    margin-right: 0.4rem;
+  }
+}
+.social-icon:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+.social-note {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+.social-feed-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 2.5rem 0 1.5rem 0;
+  flex-wrap: wrap;
+}
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  transition: transform 0.2s, filter 0.2s;
+  box-shadow: 0 2px 12px #b3000033;
+  font-size: 2.5rem;
+}
+.social-icon-link:hover {
+  transform: scale(1.13);
+  filter: brightness(1.2) drop-shadow(0 0 12px #b30000);
+}
+.social-icon-svg {
+  width: 36px;
+  height: 36px;
+  color: #fff;
+  display: block;
+}
+.social-instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+.social-facebook {
+  background: linear-gradient(135deg, #1877f3 0%, #1877f3 100%);
+}
+.social-email {
+  background: linear-gradient(135deg, #232526 0%, #ffb347 100%);
+  /* Da grigio scuro a arancio chiaro, più moderno e visibile */
+}
+@media (max-width: 600px) {
+  .social-feed-icons {
+    gap: 1.2rem;
+  }
+  .social-icon-link {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+  .social-icon-svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 2rem 1.5rem; /* aumentato margine laterale */
+  }
+  .section h2 {
+    font-size: 1.7rem;
+  }
+  .section p,
+  .section a {
+    font-size: 1rem;
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 1.5rem 1rem; /* aumentato margine laterale */
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .section p,
+  .section a {
+    font-size: 0.95rem;
+    max-width: 99vw;
+  }
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  .social-feed {
+    gap: 0.7rem;
+  }
+  .social-icon {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.section#storia {
+  background: none;
+  /* Rimosso background immagine, resta solo il video e il colore di base */
+  position: relative;
+}
+.section#storia::before {
+  display: none;
+}
+
+.section-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.22;
+  pointer-events: none;
+  /* Mantiene i colori attuali delle sezioni sopra il video */
+  mix-blend-mode: lighten;
+}
+
+.hero-section,
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Assicura che il contenuto sia sopra il video */
+.hero-content,
+.section > *:not(.section-bg-video) {
+  position: relative;
+  z-index: 1;
+}
+
+.storia-logo-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+  box-shadow: 0 0 32px var(--fire-orange);
+  background: var(--fire-dark);
+  position: relative;
+  z-index: 2;
+  transition: width 0.3s, height 0.3s;
+}
+@media (max-width: 900px) {
+  .storia-logo-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .storia-logo-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.7rem;
+  }
+}
+
